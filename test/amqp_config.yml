@@ -1,0 +1,22 @@
+# Queue config
+connection:
+  host: 'localhost'
+  user: 'guest'
+  pass: 'guest'
+  vhost: '/pupx'
+
+stock_crawl_processor:
+  class: stockCrawl
+
+queues:
+  input_crawlers:
+    queueName: input_crawlers
+    options:
+      durable: true
+    bindings:
+      - { global : 'stock.crawl' }
+
+processors:
+  stockCrawl:
+    listeners:
+      - { stock_crawl : stock_crawl_processor }
