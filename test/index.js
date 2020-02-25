@@ -1,9 +1,9 @@
 const { join } = require('path');
 const createAmqpConnection = require('../index');
-const stockCrawl = require('./processors/stockCrawl');
+const testProcessor = require('./processors/test');
 
 const amqpConnection = createAmqpConnection(join(__dirname, 'amqp_config.yml'));
 
-amqpConnection.dependencyInjector.factory('stockCrawl', () => stockCrawl);
+amqpConnection.dependencyInjector.factory('testProcessor', () => testProcessor);
 
 amqpConnection.bootstrapAmqpApp();

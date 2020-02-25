@@ -1,3 +1,4 @@
+const { join } = require('path');
 const bunyan = require('bunyan');
 
 function createLogger(loggerName, { path } = {}) {
@@ -5,7 +6,7 @@ function createLogger(loggerName, { path } = {}) {
     name: loggerName,
     streams: [
       { level: 'debug', stream: process.stdout },
-      { level: 'debug', path },
+      { level: 'debug', path: join(path, 'amqp.log') },
     ]
   });
 

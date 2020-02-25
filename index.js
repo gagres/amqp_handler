@@ -20,13 +20,13 @@ class ContainerApp {
     const amqpJsonSchema = await validate(amqpYamlSchema, AMQP_SCHEMA);
 
     const {
-      loggerName = 'amqp_logger',
+      name: loggerName = 'amqp_logger',
       filepath = '/etc/logs'
     } = amqpJsonSchema['logger'] ? amqpJsonSchema['logger'] : {};
 
     const amqpLogger = new createLogger(loggerName, {
       path: filepath,
-      levels: ['debug', 'error'],
+      levels: ['debug'],
     });
 
     this.dependencyInjector.factory('amqp_logger', () => amqpLogger);

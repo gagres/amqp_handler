@@ -1,22 +1,26 @@
 # Queue config
+logger:
+  name: test_logger
+  filepath: './tmp/logs'
+
 connection:
   host: 'localhost'
   user: 'guest'
   pass: 'guest'
   vhost: '/pupx'
 
-stock_crawl_processor:
-  class: stockCrawl
+test_processor:
+  class: testProcessor
 
 queues:
-  input_crawlers:
-    queueName: input_crawlers
+  input_test:
+    queueName: input_test
     options:
       durable: true
     bindings:
-      - { global : 'stock.crawl' }
+      - { global : 'test' }
 
 processors:
-  stockCrawl:
+  testProcessor:
     listeners:
-      - { stock_crawl : stock_crawl_processor }
+      - { testProcessor : test_processor }
