@@ -32,7 +32,7 @@ class ContainerApp {
     this.dependencyInjector.factory('amqp_logger', () => amqpLogger);
 
     try {
-      await new AmqpConnection(amqpJsonSchema, this.dependencyInjector.container);
+      await new AmqpConnection(amqpJsonSchema, this.dependencyInjector);
     } catch(err) {
       amqpLogger.error(err);
     }

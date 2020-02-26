@@ -1,7 +1,7 @@
 {
-  "name": "comparativo_indicadores_crawler",
-  "version": "1.0.0",
-  "description": "",
+  "name": "amqp_handler",
+  "version": "0.0.1",
+  "description": "A handler for AMQP messages",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -11,25 +11,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gugres/Comparativos_indicadores.git"
+    "url": "git+https://github.com/gagres/amqp_handler"
   },
   "keywords": [
-    "puppeteer",
     "nodejs",
-    "crawler"
+    "amqp"
   ],
   "author": "gabriel.giro.resende@outlook.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Gugres/Comparativos_indicadores/issues"
+    "url": "https://github.com/gagres/amqp_handler/issues"
   },
-  "homepage": "https://github.com/Gugres/Comparativos_indicadores#readme",
+  "homepage": "https://github.com/gagres/amqp_handler#readme",
   "dependencies": {
     "amqplib": "^0.5.5",
     "bottlejs": "^1.7.2",
     "bunyan": "^1.8.12",
     "joi": "^14.3.1",
-    "js-yaml": "^3.13.1",
-    "puppeteer": "^2.1.1"
+    "js-yaml": "^3.13.1"
   }
 }

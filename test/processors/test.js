@@ -1,14 +1,19 @@
 class TestProcessor {
-    process(message) {
-        console.log(`Example of amqp message handler: ${JSON.stringify(message)}`)
-    }
+  constructor(container) {
+    this.publisher = container['publisher'];
+  }
+
+  process(message) {
+    console.log(`Example of amqp message handler: ${JSON.stringify(message)}`)
+    this.publisher.publish('hello.world', {key: 'value'});
+  }
 }
 
 
 let testInstance;
-module.exports = (ch, container) => {
+module.exports = (container) => {
   if (!testInstance) {
-    testInstance = new TestProcessor(ch, container);
+    testInstance = new TestProcessor(container);
   }
 
   return testInstance;

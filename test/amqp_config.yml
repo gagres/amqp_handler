@@ -1,7 +1,7 @@
 # Queue config
 logger:
   name: test_logger
-  filepath: './tmp/logs'
+  filepath: '../tmp/logs'
 
 connection:
   host: 'localhost'
@@ -24,3 +24,6 @@ processors:
   testProcessor:
     listeners:
       - { testProcessor : test_processor }
+
+test_publisher:
+  class: testPublisher
