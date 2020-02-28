@@ -7,7 +7,10 @@ function createLogger(loggerName, { path } = {}) {
     streams: [
       { level: 'debug', stream: process.stdout },
       { level: 'debug', path: join(path, 'amqp.log') },
-    ]
+    ],
+    serializers: {
+      err: bunyan.stdSerializers.err,   // serialize error messages
+    }
   });
 
   return logger;
