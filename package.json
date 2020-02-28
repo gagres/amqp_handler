@@ -1,5 +1,5 @@
 {
-  "name": "amqp_handler",
+  "name": "@gagres/amqp_handler",
   "version": "0.0.1",
   "description": "A handler for AMQP messages",
   "main": "index.js",
